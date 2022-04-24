@@ -38,6 +38,7 @@ export default function IndoorMap({ floorPlan, startPoint, endPoint }) {
         throw new Error("Invalid start or end point provided.");
       } else {
         // Draw the path between the start and end points
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.beginPath();
         ctx.moveTo(...points[startPoint]);
         const path = graph.shortestPath(startPoint, endPoint);
@@ -48,7 +49,7 @@ export default function IndoorMap({ floorPlan, startPoint, endPoint }) {
     } catch (e) {
       console.log(e.message);
     }
-  }, []);
+  }, [startPoint]);
 
   return (
     <div className={styles.indoor_map_container}>
