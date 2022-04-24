@@ -1,6 +1,6 @@
 .container {
   background-color: whitesmoke;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .main {
@@ -13,6 +13,7 @@
 }
 
 .title {
+  z-index: 10;
   position: sticky;
   top: 0;
   background-color: lightgrey;
