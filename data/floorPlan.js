@@ -7,7 +7,7 @@ import Graph from "graph-data-structure";
  * @param {Array} edges - An array of all edges (stored as Arrays)
  * @returns {Object} - Object containing all of the above, including the Graph data structure, excluding the edges array
  */
-const floorPlan = (svg, points, edges) => {
+const floorPlan = (svg, points, edges, startPoints, endPoints) => {
   // Create graph
   const graph = Graph();
 
@@ -29,6 +29,8 @@ const floorPlan = (svg, points, edges) => {
     svg,
     points,
     graph,
+    startPoints,
+    endPoints
   };
 };
 

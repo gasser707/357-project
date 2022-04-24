@@ -1,7 +1,7 @@
 import floorPlan from "../floorPlan";
 
 // An object of points used for the paths on the floor plan
-const fifthFloorPoints = {
+const floorPoints = {
   ES: [517, 402],
   EL1: [644, 627],
   EL2: [693, 627],
@@ -55,7 +55,7 @@ const fifthFloorPoints = {
 };
 
 // An array of edges used for the paths on the floor plan
-const fifthFloorEdges = [
+const floorEdges = [
   ["_531", "_529"],
   ["_529", "topLeft1"],
   ["topLeft1", "_527"],
@@ -111,13 +111,58 @@ const fifthFloorEdges = [
   ["middleRight1", "_564"],
   ["middleRight1", "EL1"],
   ["EL1", "middleCenter"],
+  ["topCenter2", "topCenter6"],
 ];
+
+// An object of start points (used for the dropdown)
+const floorStartPoints = {
+  "Escalator": "ES",
+  "Elevator General-1": "EL1",
+  "Elevator General-2": "EL2",
+  "Elevator Handicap": "EL5",
+  "Staircase 575": "S575",
+  "Staircase 585": "S585",
+  "Staircase 590": "S590",
+  "Staircase 598": "S598",
+}
+
+// An object of end points (used for the dropdown)
+const floorEndPoints = {
+  501: "_501",
+  502: "_502",
+  507: "_507",
+  509: "_509",
+  510: "_510",
+  511: "_511",
+  513: "_513",
+  515: "_515",
+  517: "_517",
+  520: "_520",
+  521: "_521",
+  525: "_525",
+  527: "_527",
+  529: "_529",
+  531: "_531",
+  535: "_535",
+  537: "_537",
+  539: "_539",
+  540: "_540",
+  544: "_544",
+  553: "_553",
+  557: "_557",
+  561: "_561",
+  562: "_562",
+  564: "_564",
+  565: "_565",
+}
 
 // An object containing all the necessary data for the floor plan
 const fifthFloorPlan = floorPlan(
   "/svgs/Floor_Plan_5.svg",
-  fifthFloorPoints,
-  fifthFloorEdges,
+  floorPoints,
+  floorEdges,
+  floorStartPoints,
+  floorEndPoints,
 );
 
 export default fifthFloorPlan;
