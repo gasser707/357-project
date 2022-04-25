@@ -49,7 +49,7 @@ export default function IndoorMap({ floorPlan, startPoint, endPoint }) {
     } catch (e) {
       console.log(e.message);
     }
-  }, [startPoint]);
+  }, [startPoint, endPoint]);
 
   return (
     <div className={styles.indoor_map_container}>
