@@ -9,6 +9,7 @@ import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
+  Flex,
 } from "@chakra-ui/react";
 import { ChevronDownIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import IndoorMap from "./IndoorMap";
@@ -59,7 +60,7 @@ export default function MainMap({ floorData, setVisibility }) {
                 cursor: "default",
               }}
             >
-              Room {floorData.endPoint}
+              Room {selectedEndPoint}
             </BreadcrumbLink>
           </BreadcrumbItem>
         </Breadcrumb>
@@ -79,14 +80,12 @@ export default function MainMap({ floorData, setVisibility }) {
           >
             Back
           </Button>
-
           <Menu>
             <MenuButton
               as={Button}
               rightIcon={<ChevronDownIcon />}
               colorScheme="blue"
               width="15rem"
-              maxWidth="100%"
             >
               {selectedStartPoint || "Change Start Point"}
             </MenuButton>
@@ -98,32 +97,6 @@ export default function MainMap({ floorData, setVisibility }) {
                     height="2.3rem"
                     onClick={() => {
                       setSelectedStartPoint(room);
-                    }}
-                  >
-                    {room}
-                  </MenuItem>
-                ))}
-            </MenuList>
-          </Menu>
-
-          <Menu>
-            <MenuButton
-              as={Button}
-              rightIcon={<ChevronDownIcon />}
-              colorScheme="blue"
-              width="15rem"
-              maxWidth="100%"
-            >
-              {selectedEndPoint || "Change End Point"}
-            </MenuButton>
-            <MenuList width="15rem" maxHeight="12rem" overflowY="scroll">
-              {floorData.floorPlan?.endPoints &&
-                Object.keys(floorData.floorPlan.endPoints).map((room) => (
-                  <MenuItem
-                    key={room}
-                    height="2.3rem"
-                    onClick={() => {
-                      setSelectedEndPoint(room);
                     }}
                   >
                     {room}
