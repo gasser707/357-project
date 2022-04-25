@@ -9,13 +9,13 @@ const floorEdges = [];
 // An object of start points (used for the dropdown)
 const floorStartPoints = {
   "Escalator": "",
-  "Elevator General-1": "",
-  "Elevator General-2": "",
-  "Elevator Handicap": "",
-  "Staircase 575": "",
-  "Staircase 585": "",
-  "Staircase 590": "",
-  "Staircase 598": "",
+  "Elevator (General-1)": "",
+  "Elevator (General-2)": "",
+  "Elevator (Handicap)": "",
+  "Staircase (575)": "",
+  "Staircase (585)": "",
+  "Staircase (590)": "",
+  "Staircase (598)": "",
 }
 
 // An object of end points (used for the dropdown)
