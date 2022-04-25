@@ -20,6 +20,7 @@ export default function MainSelectors({ setFloorData, setVisibility }) {
   const [selectedBuilding, setSelectedBuilding] = useState(null);
   const [selectedFloor, setSelectedFloor] = useState(null);
   const [selectedRoom, setSelectedRoom] = useState(null);
+  const [startPoint, setStartPoint] = useState(null);
   const [hallBuildingPlan, setHallBuildingPlan] = useState(null);
   
   const buildings = [
@@ -63,19 +64,31 @@ export default function MainSelectors({ setFloorData, setVisibility }) {
   }, [selectedFloor]);
 
   return (
-    <Box maxWidth="100%" margin="2rem" display="flex" flexDirection="column" gap="2rem" alignItems="center">
-
+    <Box
+      maxWidth="100%"
+      margin="2rem"
+      display="flex"
+      flexDirection="column"
+      gap="2rem"
+      alignItems="center"
+    >
       <Box width="22.5rem" maxWidth="100%" textAlign="center" fontSize="1.1rem">
         Welcome, let us locate your classroom at Concordia University!
       </Box>
-      
+
       <Menu>
-        <MenuButton as={Button} rightIcon={<ChevronDownIcon />} colorScheme="blue" width="15rem" maxWidth="100%">
+        <MenuButton
+          as={Button}
+          rightIcon={<ChevronDownIcon />}
+          colorScheme="blue"
+          width="15rem"
+          maxWidth="100%"
+        >
           {`${selectedBuilding || "Select a"} Building`}
         </MenuButton>
         <MenuList width="15rem" maxHeight="12rem" overflowY="scroll">
-          {buildings.map((building) => 
-            building === "Henry F. Hall" ? 
+          {buildings.map((building) =>
+            building === "Henry F. Hall" ? (
               <MenuItem
                 key={building}
                 height="2.3rem"
@@ -87,20 +100,33 @@ export default function MainSelectors({ setFloorData, setVisibility }) {
               >
                 {building}
               </MenuItem>
-              :
-              <MenuItem key={building} height="2.3rem" isDisabled>{building}</MenuItem>)}
+            ) : (
+              <MenuItem key={building} height="2.3rem" isDisabled>
+                {building}
+              </MenuItem>
+            )
+          )}
         </MenuList>
       </Menu>
 
       <Menu>
-        <MenuButton as={Button} rightIcon={<ChevronDownIcon />} colorScheme="blue" isDisabled={!selectedBuilding} width="15rem" maxWidth="100%">
+        <MenuButton
+          as={Button}
+          rightIcon={<ChevronDownIcon />}
+          colorScheme="blue"
+          isDisabled={!selectedBuilding}
+          width="15rem"
+          maxWidth="100%"
+        >
           {selectedFloor ? `${selectedFloor}th Floor` : "Select a Floor"}
         </MenuButton>
         <MenuList width="15rem" maxHeight="12rem" overflowY="scroll">
-          {hallBuildingFloors.map((floor) => 
-            floor === 4 || floor === 6 || floor === 7 ? 
-              <MenuItem key={floor} height="2.3rem" isDisabled>{floor}</MenuItem>
-              :
+          {hallBuildingFloors.map((floor) =>
+            floor === 4 || floor === 6 || floor === 7 ? (
+              <MenuItem key={floor} height="2.3rem" isDisabled>
+                {floor}
+              </MenuItem>
+            ) : (
               <MenuItem
                 key={floor}
                 height="2.3rem"
@@ -110,16 +136,26 @@ export default function MainSelectors({ setFloorData, setVisibility }) {
                 }}
               >
                 {floor}
-              </MenuItem>)}
+              </MenuItem>
+            )
+          )}
         </MenuList>
       </Menu>
-      
+
       <Menu>
-        <MenuButton as={Button} rightIcon={<ChevronDownIcon />} colorScheme="blue" isDisabled={!selectedFloor} width="15rem" maxWidth="100%">
+        <MenuButton
+          as={Button}
+          rightIcon={<ChevronDownIcon />}
+          colorScheme="blue"
+          isDisabled={!selectedFloor}
+          width="15rem"
+          maxWidth="100%"
+        >
           {selectedRoom ? `Room ${selectedRoom}` : "Select a Room"}
         </MenuButton>
         <MenuList width="15rem" maxHeight="12rem" overflowY="scroll">
-          {hallBuildingPlan?.endPoints && Object.keys(hallBuildingPlan.endPoints).map((room) => 
+          {hallBuildingPlan?.endPoints &&
+            Object.keys(hallBuildingPlan.endPoints).map((room) => (
               <MenuItem
                 key={room}
                 height="2.3rem"
@@ -128,13 +164,47 @@ export default function MainSelectors({ setFloorData, setVisibility }) {
                 }}
               >
                 {room}
-              </MenuItem>)}
+              </MenuItem>
+            ))}
+        </MenuList>
+      </Menu>
+
+      <Menu>
+        <MenuButton
+          as={Button}
+          rightIcon={<ChevronDownIcon />}
+          colorScheme="blue"
+          isDisabled={!selectedFloor}
+          width="15rem"
+          maxWidth="100%"
+        >
+          {startPoint ? `${startPoint}` : "Select your start point"}
+        </MenuButton>
+        <MenuList width="15rem" maxHeight="12rem" overflowY="scroll">
+          {hallBuildingPlan?.startPoints &&
+            Object.keys(hallBuildingPlan.startPoints).map((point) => (
+              <MenuItem
+                key={point}
+                height="2.3rem"
+                onClick={() => {
+                  setStartPoint(point);
+                }}
+              >
+                {point}
+              </MenuItem>
+            ))}
         </MenuList>
       </Menu>
 
       <Button
         onClick={() => {
-          setFloorData({floorPlan: hallBuildingPlan, endPoint: selectedRoom, selectedBuilding, selectedFloor});
+          setFloorData({
+            floorPlan: hallBuildingPlan,
+            endPoint: selectedRoom,
+            startPoint: startPoint,
+            selectedBuilding,
+            selectedFloor,
+          });
           setVisibility(true);
         }}
         isDisabled={!selectedRoom}
@@ -144,7 +214,6 @@ export default function MainSelectors({ setFloorData, setVisibility }) {
       >
         Find
       </Button>
-
     </Box>
   );
 }
