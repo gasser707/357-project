@@ -2,10 +2,10 @@ import floorPlan from "../floorPlan";
 
 // An object of points used for the paths on the floor plan
 const floorPoints = {
-  ESL: [490, 395],
+  ES: [490, 395],
   EL4: [605, 260],
   EL5: [605, 305],
-  middle_corridor_ESL: [450, 395],
+  middle_corridor_ES: [450, 395],
   middle_corridor_center: [450, 615],
   middle_corridor_right_end: [840, 615],
   top_center: [450, 180],
@@ -45,8 +45,8 @@ const floorPoints = {
 
 // An array of edges used for the paths on the floor plan
 const floorEdges = [
-  ["ESL", "middle_corridor_ESL"],
-  ["middle_corridor_ESL", "middle_corridor_center"],
+  ["ES", "middle_corridor_ES"],
+  ["middle_corridor_ES", "middle_corridor_center"],
   ["H_1160", "middle_corridor_center"],
   ["H_B_1192", "middle_corridor_center"],
   ["H_1160", "H_1158"],
@@ -55,7 +55,7 @@ const floorEdges = [
   ["H_1155", "middle_corridor_right_end"],
   ["H_1154", "H_1158"],
   ["H_1154", "H_1152"],
-  ["middle_corridor_ESL", "H_1134"],
+  ["middle_corridor_ES", "H_1134"],
   ["H_1134", "H_1136"],
   ["top_center", "H_1136"],
   ["top_center", "H_1132"],
@@ -87,7 +87,7 @@ const floorEdges = [
 
 // An object of start points (used for the dropdown)
 const floorStartPoints = {
-  Escalator: "ESL",
+  Escalator: "ES",
   "Elevator (General-1)": "EL4",
   "Elevator (General-2)": "EL5",
   "Staircase (1175)": "H_S_1175",
@@ -98,7 +98,7 @@ const floorStartPoints = {
 
 // An object of end points (used for the dropdown)
 const floorEndPoints = {
-  ESL: "ESL",
+  ES: "ES",
   EL4: "EL4",
   EL5: "EL5",
   1160: "H_1160",

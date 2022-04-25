@@ -169,33 +169,6 @@ export default function MainSelectors({ setFloorData, setVisibility }) {
         </MenuList>
       </Menu>
 
-      <Menu>
-        <MenuButton
-          as={Button}
-          rightIcon={<ChevronDownIcon />}
-          colorScheme="blue"
-          isDisabled={!selectedFloor}
-          width="15rem"
-          maxWidth="100%"
-        >
-          {startPoint ? `${startPoint}` : "Select your start point"}
-        </MenuButton>
-        <MenuList width="15rem" maxHeight="12rem" overflowY="scroll">
-          {hallBuildingPlan?.startPoints &&
-            Object.keys(hallBuildingPlan.startPoints).map((point) => (
-              <MenuItem
-                key={point}
-                height="2.3rem"
-                onClick={() => {
-                  setStartPoint(point);
-                }}
-              >
-                {point}
-              </MenuItem>
-            ))}
-        </MenuList>
-      </Menu>
-
       <Button
         onClick={() => {
           setFloorData({
