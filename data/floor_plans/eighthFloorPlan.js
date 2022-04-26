@@ -138,9 +138,9 @@ const floorEdges = [
 // An object of start points (used for the dropdown)
 const floorStartPoints = {
   "Escalator": "ES",
-  "Elevator (General-1)": "EL1",
-  "Elevator (General-2)": "EL2",
-  "Elevator (Handicap)": "EL5",
+  "Elevator (EL 1)": "EL1",
+  "Elevator (EL 2)": "EL2",
+  "Elevator (EL 5)": "EL5",
   "Staircase (875)": "S875",
   "Staircase (885)": "S885",
   "Staircase (890)": "S890",
