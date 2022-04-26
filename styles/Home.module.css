@@ -17,9 +17,39 @@
   position: sticky;
   top: 0;
   background-color: lightgrey;
-  padding: 0.75rem;
+  padding: 0.75rem 1rem;
   width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.title_text {
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 1.75rem;
   text-align: center;
+  padding-left: 1rem;
+}
+
+.page {
+  padding: 2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.page_title {
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+.page_text {
+  margin-top: 2rem;
+  max-width: 30rem;
+}
+
+.page_steps {
+  margin-top: 0.5rem;
+  max-width: 30rem;
 }

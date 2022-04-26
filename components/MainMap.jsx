@@ -115,6 +115,16 @@ export default function MainMap({ floorData, setVisibility }) {
           }
           endPoint={floorData.floorPlan?.endPoints[selectedEndPoint]}
         />
+
+        <Box marginLeft="0.5rem" marginTop="-1.5rem">
+          <Box textDecoration="underline">Legend</Box>
+          <Box paddingLeft="0.5rem">
+            <Box>Green (ES, EL, S): Entry points</Box>
+            <Box lineHeight="1rem">Blue (B): Washroom</Box>
+            <Box>Red (Thick line): Path</Box>
+          </Box>
+        </Box>
+
       </Box>
     )
   );
