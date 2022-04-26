@@ -16,10 +16,10 @@ import tenthFloorPlan from "../data/floor_plans/tenthFloorPlan";
 import eleventhFloorPlan from "../data/floor_plans/eleventhFloorPlan";
 import twelfthFloorPlan from "../data/floor_plans/twelfthFloorPlan";
 
-export default function MainSelectors({ setFloorData, setVisibility }) {
-  const [selectedBuilding, setSelectedBuilding] = useState(null);
-  const [selectedFloor, setSelectedFloor] = useState(null);
-  const [selectedRoom, setSelectedRoom] = useState(null);
+export default function MainSelectors({ floorData, setFloorData, setVisibility }) {
+  const [selectedBuilding, setSelectedBuilding] = useState(floorData?.selectedBuilding);
+  const [selectedFloor, setSelectedFloor] = useState(floorData?.selectedFloor);
+  const [selectedRoom, setSelectedRoom] = useState(floorData?.endPoint);
   const [startPoint, setStartPoint] = useState(null);
   const [hallBuildingPlan, setHallBuildingPlan] = useState(null);
   
