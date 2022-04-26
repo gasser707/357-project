@@ -122,7 +122,7 @@ const floorStartPoints = {
   "Escalator": "ES",
   "Elevator (El 1)": "EL1",
   "Elevator (EL 2)": "EL2",
-  "Elevator (Handicap)": "EL5",
+  "Elevator (EL 5)": "EL5",
   "Staircase (1075)": "S1075",
   "Staircase (1085)": "S1085",
   "Staircase (1090)": "S1090",
