@@ -34,8 +34,8 @@ const floorPoints = {
   topLeft2: [150, 120],
   topLeft: [320, 120],
   _933: [240, 120],
-  _937: [580, 220],
-  _945: [505, 150],
+  _937: [580, 200],
+  _945: [580, 220],
   _966: [580, 345],
   _968: [730, 345],
   _962: [630, 615],
@@ -107,6 +107,7 @@ const floorEdges = [
   ["_921","_923"],
   ["_923","_925"],
   ["_925","_927"],
+  ["_937", "_945"]
 ];
 
 // An object of start points (used for the dropdown)
@@ -123,7 +124,6 @@ const floorStartPoints = {
 
 // An object of end points (used for the dropdown)
 const floorEndPoints = {
-  902: "_902",
   903: "_903",
   907: "_907",
   909: "_909",
